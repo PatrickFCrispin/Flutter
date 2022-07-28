@@ -1,0 +1,8 @@
+material de apoio - flutter/dart
+
+https://dart.dev/samples
+http://www.macoratti.net/19/07/flut_scaffd2.htm
+http://www.macoratti.net/19/11/flut_dismiss1.htm
+
+para recarregar uma lista quando navego entre páginas:
+https://www.ti-enxame.com/pt/flutter/como-atualizar-uma-pagina-apos-pressionar-o-botao-voltar/837131988/
