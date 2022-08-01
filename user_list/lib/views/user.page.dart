@@ -64,12 +64,12 @@ class _UserPageState extends State<UserPage> {
                 );
               },
               onLongPress: () {
-                showConfirmRemovalDialog(context, user.name.toString(), index);
+                _showConfirmRemovalDialog(context, user.name.toString(), index);
               },
             ),
             direction: DismissDirection.endToStart,
             onDismissed: (direction) {
-              remove(index);
+              _remove(index);
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${user.name} removido(a)')));
             },
           );
@@ -92,13 +92,13 @@ class _UserPageState extends State<UserPage> {
     );
   }
 
-  void remove(int index) {
+  void _remove(int index) {
     setState(() {
       viewModel.removeUser(index);
     });
   }
 
-  void showConfirmRemovalDialog(BuildContext context, String name, int index) {
+  void _showConfirmRemovalDialog(BuildContext context, String name, int index) {
     var cancelButton = TextButton(
       child: Text('Não, cancelar'),
       onPressed: () {
@@ -108,7 +108,7 @@ class _UserPageState extends State<UserPage> {
     var yesButton = TextButton(
       child: Text('Sim'),
       onPressed: () {
-        remove(index);
+        _remove(index);
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$name removido(a)')));
         Navigator.of(context).pop();
       },

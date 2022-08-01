@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:user_list/view_models/user.view.model.dart';
 
 class UserAddPage extends StatefulWidget {
-  UserViewModel viewModel;
+  final UserViewModel viewModel;
   UserAddPage(this.viewModel);
 
   @override
@@ -104,7 +104,7 @@ class _UserAddPageState extends State<UserAddPage> {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
                       setState(() {});
-                      add();
+                      _add();
                       _formKey.currentState!.reset();
                     }
                   },
@@ -117,7 +117,7 @@ class _UserAddPageState extends State<UserAddPage> {
     );
   }
 
-  Future<void> add() async {
+  Future<void> _add() async {
     await widget.viewModel.newUser(widget.viewModel);
     setState(() {});
   }

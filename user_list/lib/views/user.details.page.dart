@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:user_list/models/user.dart';
 
 class UserDetailsPage extends StatefulWidget {
-  User user;
+  final User user;
   UserDetailsPage(this.user);
 
   @override
@@ -36,13 +36,13 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
         backgroundColor: Colors.pink,
         child: Icon(Icons.edit),
         onPressed: () {
-          showEditDialog(context);
+          _showEditDialog(context);
         },
       ),
     );
   }
 
-  void showEditDialog(BuildContext context) {
+  void _showEditDialog(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
     var cancelButton = TextButton(
       child: Text('Cancelar'),
